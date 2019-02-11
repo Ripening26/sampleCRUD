@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>전체화면리스트</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>sampleId</td>
+			<td>sampleName</td>
+		</tr>
+		<tr th:each="l : ${list}">
+			<td th:text="${l.sampleId}"></td>
+			<td th:text="${l.sampleName}"></td>
+		</tr>
+	</table>
+
+</body>
+</html>

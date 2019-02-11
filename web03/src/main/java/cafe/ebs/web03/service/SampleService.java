@@ -14,7 +14,9 @@ public class SampleService {
 	private SampleMapper sampleMapper; 
 	
 	public List<Sample> getSampleList(){
-		return null;
+		List<Sample> list = null;
+		list = sampleMapper.selectsamplelist();
+		return list;
 	}
 	
 	public Sample getSampleOne() {
