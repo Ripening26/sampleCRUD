@@ -12,18 +12,30 @@
 	</select>
 	<select id="sampleOne" resultType="cafe.ebs.web03.vo.Sample">
 		<!-- select 쿼리문장 작성 -->
+		SELECT
+			sample_id as sampleId,
+			sample_name as sampleName 
+		From sample 
+		WHERE sample_id=#{sampleId}
 	</select>
-	<insert id="insertsample" parameterType="cafe.ebs.web03.vo.Sample">   	<!-- resultType 무조건있기때문에 만들필요가없다 -->
+	<insert id="addSample" parameterType="cafe.ebs.web03.vo.Sample">   	<!-- resultType 무조건있기때문에 만들필요가없다 -->
 		INSERT INTO sample(
 			sample_name
 		) VALUES(
 			#{sampleName}
 		)
 	</insert>
-	<delete id="deletesample" parameterType="cafe.ebs.web03.vo.Sample">
+	<delete id="deleteSample" parameterType="cafe.ebs.web03.vo.Sample">
 		<!--delete쿼리문작성 -->
+		DELETE FROM sample
+		where sample_id= #{sampleId}
 	</delete>
-	<update id="updatesample" parameterType="cafe.ebs.web03.vo.Sample">
+	
+	<update id="updateSample" parameterType="cafe.ebs.web03.vo.Sample">
 		<!--update쿼리문 작성  -->
+		UPDATE sample
+		SET
+		sample_name=#{sampleName}
+		WHERE sample_id = #{sampleId}
 	</update>
 	</mapper>		

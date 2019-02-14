@@ -8,6 +8,15 @@ import cafe.ebs.web03.vo.Sample;
 
 @Mapper
 public interface SampleMapper {
- //추상메서드 만들기
+	//insert
+	int addSample(Sample sample);
+	//list 
 	List<Sample> selectsamplelist();
+	//delete
+	int deleteSample(Sample sample);
+	//one update
+	Sample sampleOne(int sampleId);
+	//update
+	int updateSample(int sampleId,String sampleName);
+	
 }

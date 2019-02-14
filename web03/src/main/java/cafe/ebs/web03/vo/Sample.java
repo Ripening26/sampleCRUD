@@ -1,5 +1,8 @@
 package cafe.ebs.web03.vo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Sample {
 	private int sampleId;  // sample.sample_id
 	private String sampleName ; // sample.sample_name;

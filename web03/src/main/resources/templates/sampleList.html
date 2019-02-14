@@ -9,10 +9,15 @@
 		<tr>
 			<td>sampleId</td>
 			<td>sampleName</td>
+			<td>update</td>
+			<td>delete</td>
 		</tr>
 		<tr th:each="l : ${list}">
 			<td th:text="${l.sampleId}"></td>
 			<td th:text="${l.sampleName}"></td>
+			<!-- 수정,삭제 할수있는 a태그 작성 -->
+			<td><a th:href="@{/updateSample(sampleid=${l.sampleId})}">수정</a></td>
+			<td><a th:href="@{/deleteSample(sampleid=${l.sampleId})}">삭제</a></td>
 		</tr>
 	</table>
 

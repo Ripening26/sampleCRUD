@@ -19,19 +19,23 @@ public class SampleService {
 		return list;
 	}
 	
-	public Sample getSampleOne() {
-		return null;
+	public Sample getSampleOne(int sampleId) {		
+		Sample sample = sampleMapper.sampleOne(sampleId);
+		return sample;
 	}
 	
 	public int addSample(Sample sample) {
-		return 0; 
+		int result = sampleMapper.addSample(sample);
+		return result; 
 	}
 	
 	public int removeSample(Sample sample) {
-		return 0;
+		int result = sampleMapper.deleteSample(sample);
+		return result;
 	}
 	
-	public int modifySample(Sample sample) {
-		return 0; 
+	public int modifySample(int sampleId,String sampleName) {
+		int result = sampleMapper.updateSample(sampleId,sampleName);
+		return result; 
 	}
 }
