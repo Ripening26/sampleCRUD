@@ -2,7 +2,6 @@ package cafe.ebs.web03.controller;
 
 import java.util.List;
 
-import javax.swing.Spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import cafe.ebs.web03.mapper.SampleMapper;
 import cafe.ebs.web03.service.SampleService;
 import cafe.ebs.web03.vo.Sample;
 
@@ -22,6 +19,10 @@ public class SampleController {
 	@Autowired
 	private Sample sample;
 	// 1. 입력폼
+	/*
+	 * Mapping 을 통해서 주소값이 같으면 이동을 할수있다.
+	 * 
+	 */
 	@GetMapping(value="/addSample")
 	public String addSample() {
 		 
@@ -50,7 +51,7 @@ public class SampleController {
 		return "redirect:/sampleList";
 	}
 	// 5. 수정 폼
-	@GetMapping(value="/updateSample")
+	@GetMapping(value="/deleteSample")
 	public String updateSample(@RequestParam(value="sampleid") int sampleId, Model model) {
 		
 		Sample sample = sampleService.getSampleOne(sampleId);
